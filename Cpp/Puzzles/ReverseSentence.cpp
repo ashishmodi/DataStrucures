@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "ReverseSentence.h"
 
-//using namespace std;
-
-
 ReverseSentence::ReverseSentence()
 {
 	sentence = "INDIA  IS MY  COUNTRY";
@@ -16,10 +13,10 @@ ReverseSentence::~ReverseSentence()
 void ReverseSentence::processReverse()
 {
 	cout << "Before processing Sentence is " << sentence << endl;
+	//INDIA IS  MY   COUNTRY
 	
 	int first = 0, last = 0;
-
-	//INDIA IS  MY   COUNTRY	
+		
 	for (int i = 0; i < sentence.length() ; ++i)
 	{
 		if (charAt(i) == ' ')
@@ -45,8 +42,8 @@ void ReverseSentence::processReverse()
 	}
 
 	cout << "After  reversing words " << sentence << endl;
-
 	//AIDNI SI YM YRTNUOC
+	
 	for (int i = 0; i < sentence.length(); ++i)
 	{
 		int first = 0, last = sentence.length() - 1;
@@ -81,4 +78,3 @@ char ReverseSentence::charAt(int index)
 {
 	return sentence[index];
 }
-

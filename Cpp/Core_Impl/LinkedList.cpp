@@ -2,8 +2,10 @@
 #include "LinkedList.h"
 
 
-LinkedList::LinkedList() : m_count(0)
+LinkedList::LinkedList()
 {
+	head = NULL;
+	m_count = 0;
 }
 
 LinkedList::~LinkedList()
@@ -11,8 +13,7 @@ LinkedList::~LinkedList()
 }
 
 void LinkedList::testLinkedList()
-{
-	head = NULL;
+{	
 	cout << "How many no's you want to insert in Linked List\n";
 	int nos;
 	cin >> nos;	
@@ -21,7 +22,7 @@ void LinkedList::testLinkedList()
 		int no;
 		cout << "Enter number\n";
 		cin >> no;
-		cout << "Where you want to insert 1:begin 2:middle(nth) 3:end\n";
+		cout << "What you want to do? insert 1:begin 2:middle(nth) 3:end or 4:Delete 5:exit\n";
 		int position;
 		cin >> position;
 		switch (position)
@@ -40,6 +41,14 @@ void LinkedList::testLinkedList()
 		case 3:
 			insertAtEnd(no);
 			printLinkedList();
+			break;
+		case 4:
+			cout << "What is index position?";
+			int n;
+			cin >> n;
+			deleteFromNth(n);
+			printLinkedList();
+		case 5:
 			break;
 		default:
 			break;
@@ -102,6 +111,57 @@ void LinkedList::insertAtEnd(int no)
 	++m_count;
 }
 
+//To delete nth Node, go till n - 1 th node. Set n - 1 -> next as n + 1. Also delete(free) n th node to avoid memory leak
+void LinkedList::deleteFromNth(int n)
+{
+	Node* temp1 = head;
+
+	if (n == 1)
+	{
+		head = temp1->next;
+		delete temp1;
+		--m_count;
+		return;
+	}
+
+	for (int i = 0; i < n - 2; i++)
+	{
+		temp1 = temp1->next;
+	}
+	Node* temp2 = temp1->next;
+	temp1->next = temp2->next;
+	delete temp2;
+	--m_count;
+}
+
+void LinkedList::reverseLL_Iterative()
+{
+	Node *curr, *next, *prev;
+	curr = head;
+	prev = NULL;
+
+	while (curr != NULL)
+	{
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+	head = prev;
+}
+
+void LinkedList::reverseLL_Recursion(Node* p)
+{
+	if (p->next == NULL) {
+		head = p;
+		return;
+	}
+	reverseLL_Recursion(p->next);
+	Node* q = p->next;	
+	q->next = p;
+	p->next = NULL;
+}
+
 void LinkedList::printLinkedList()
 {
 	Node* temp = head;
@@ -112,6 +172,28 @@ void LinkedList::printLinkedList()
 		temp = temp->next;
 	}
 	cout << endl;
+}
+
+void LinkedList::printLL_recursion(Node * p)
+{
+	if (p == NULL)
+	{
+		cout << endl;
+		return; //terminating condition
+	}
+	cout << " " << p->data;
+	printLL_recursion(p->next);
+}
+
+void LinkedList::printLL_Reverse_recursion(Node * p)
+{
+	if (p == NULL)
+	{
+		cout << endl;
+		return;
+	}
+	printLL_Reverse_recursion(p->next);
+	cout << " " << p->data;
 }
 
 int LinkedList::noOfElementsInLL()

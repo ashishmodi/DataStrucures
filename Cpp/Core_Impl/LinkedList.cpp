@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "LinkedList.h"
+#include <stack>
 
 
 LinkedList::LinkedList()
@@ -22,7 +23,7 @@ void LinkedList::testLinkedList()
 		int no;
 		cout << "Enter number\n";
 		cin >> no;
-		cout << "What you want to do? insert 1:begin 2:middle(nth) 3:end or 4:Delete 5:exit\n";
+		cout << "What you want to do? insert 1:begin 2:middle(nth) 3:end 4:Delete 5:Reverse 6:exit\n";
 		int position;
 		cin >> position;
 		switch (position)
@@ -49,7 +50,13 @@ void LinkedList::testLinkedList()
 			deleteFromNth(n);
 			printLinkedList();
 		case 5:
-			break;
+			reverseLL_Iterative();
+			printLinkedList();
+			reverseLL_Recursion();
+			printLinkedList();
+			reverseLL_Stack();
+			printLinkedList();
+		case 6:
 		default:
 			break;
 		}				
@@ -160,6 +167,28 @@ void LinkedList::reverseLL_Recursion(Node* p)
 	Node* q = p->next;	
 	q->next = p;
 	p->next = NULL;
+}
+
+void LinkedList::reverseLL_Stack()
+{
+	Node* temp = head;
+	stack<Node*> S;
+	while (temp != NULL)
+	{
+		S.push(temp);
+		temp = temp->next;
+	}
+
+	temp = S.top();
+	head = temp;
+	S.pop();
+	while (!S.empty)
+	{
+		temp->next = S.top();
+		S.pop();
+		temp = temp->next;
+	}
+	temp->next = NULL;
 }
 
 void LinkedList::printLinkedList()

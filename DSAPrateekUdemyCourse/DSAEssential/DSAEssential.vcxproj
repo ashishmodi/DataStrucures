@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b018da54-b418-47ec-a4ca-db77d37ad81f}</ProjectGuid>
-    <RootNamespace>PrateekBasics</RootNamespace>
+    <ProjectGuid>{ac8f1fb6-7d67-4624-91bd-4d2856e5be8d}</ProjectGuid>
+    <RootNamespace>DSAEssential</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
+    <ClCompile Include="DSAEssential.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,58 @@
+Unsorted array: 10, 30, 20, 50, 40, 70, 60,
+Linear Search ==> Enter an element to find in an array: 20
+Element 20 is present in nArrUnsorted array at index 2
+
+Sorted array: 10, 20, 30, 40, 50, 60, 70,
+Binary Search ==> Enter an element to find in an array: 35
+Element 35 is not present in nArrSorted array
+
+Sorted array after reverse: 70, 60, 50, 40, 30, 20, 10,
+
+Printing all the pairs:
+[10, 20] [10, 30] [10, 40] [10, 50] [10, 60] [10, 70]
+[20, 30] [20, 40] [20, 50] [20, 60] [20, 70]
+[30, 40] [30, 50] [30, 60] [30, 70]
+[40, 50] [40, 60] [40, 70]
+[50, 60] [50, 70]
+[60, 70]
+
+[ 10, ]. Sum = 10
+[ 10, 20, ]. Sum = 30
+[ 10, 20, 30, ]. Sum = 60
+[ 10, 20, 30, 40, ]. Sum = 100
+[ 10, 20, 30, 40, 50, ]. Sum = 150
+[ 10, 20, 30, 40, 50, 60, ]. Sum = 210
+[ 10, 20, 30, 40, 50, 60, 70, ]. Sum = 280
+[ 20, ]. Sum = 20
+[ 20, 30, ]. Sum = 50
+[ 20, 30, 40, ]. Sum = 90
+[ 20, 30, 40, 50, ]. Sum = 140
+[ 20, 30, 40, 50, 60, ]. Sum = 200
+[ 20, 30, 40, 50, 60, 70, ]. Sum = 270
+[ 30, ]. Sum = 30
+[ 30, 40, ]. Sum = 70
+[ 30, 40, 50, ]. Sum = 120
+[ 30, 40, 50, 60, ]. Sum = 180
+[ 30, 40, 50, 60, 70, ]. Sum = 250
+[ 40, ]. Sum = 40
+[ 40, 50, ]. Sum = 90
+[ 40, 50, 60, ]. Sum = 150
+[ 40, 50, 60, 70, ]. Sum = 220
+[ 50, ]. Sum = 50
+[ 50, 60, ]. Sum = 110
+[ 50, 60, 70, ]. Sum = 180
+[ 60, ]. Sum = 60
+[ 60, 70, ]. Sum = 130
+[ 70, ]. Sum = 70
+Max sum of Sub array using Brute force approach = 280
+
+Prefix sum array: 10, 30, 60, 100, 150, 210, 280,
+Max sum of Sub array using Prefix sum = 280
+
+Max sum of Sub array using Kadane's algorithm = 280
+
+Lower bound of a number using Brute force is: -1
+Lower bound of a number using Binary search is: 3
+
+C:\Ashish\Personal\DataStructures\DSAPrateekUdemyCourse\x64\Debug\DSAEssential.exe (process 28984) exited with code 0.
+Press any key to close this window . . .

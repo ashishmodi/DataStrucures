@@ -39,7 +39,7 @@ int main()
 
     cout << "Sorted array after reverse: ";
     reverserArray(nArrSorted, size);
-    for (size_t i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; ++i) {
         cout << nArrSorted[i] << ", ";
     }
     cout << endl << endl;
@@ -52,12 +52,24 @@ int main()
     sumOfAllSubArraysUsingPrefixSum(nArrSorted, size);
     sumOfAllSubArraysUsingKadanesAlgorithm(nArrSorted, size);
 
-    vector<int> vNos = { -1, -1, 2, 3, 5 };
-    int nLowerBound = lowerBoundUsingBruteForce(vNos, 0);
+    vector<int> vNos1 = { -1, -1, 2, 3, 5 };
+    int nLowerBound = lowerBoundUsingBruteForce(vNos1, 0);
     cout << "Lower bound of a number using Brute force is: " << nLowerBound << endl;
 
-    nLowerBound = lowerBoundUsingBinarySearch(vNos, 4);
-    cout << "Lower bound of a number using Binary search is: " << nLowerBound << endl;
+    nLowerBound = lowerBoundUsingBinarySearch(vNos1, 4);
+    cout << "Lower bound of a number using Binary search is: " << nLowerBound << endl << endl;
+
+    vector<int> vNos2{ 10, 22, 28, 29, 30, 40 };
+    pair<int, int> closestSumSortedPair = closestSum(vNos2, 54);
+    cout << "Closest pair near to target is: (" << closestSumSortedPair.first << ", " << closestSumSortedPair.second << ")" << endl << endl;
+
+    cout << "Array before rotation is: ";
+    for (int i = 0; i < vNos2.size(); ++i) {
+        cout << vNos2[i] << ", ";
+    }
+    cout << endl;
+    rotateKTimesExtraSpace(vNos2, 3);
+    rotateKTimesInplace(vNos2, 3);
 
     return 0;
 }

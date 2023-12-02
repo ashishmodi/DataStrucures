@@ -124,7 +124,7 @@ int lowerBoundUsingBruteForce(vector<int> A, int Val) {
 		return nLowerBound;
 }
 
-int lowerBoundUsingBinarySearch(std::vector<int> A, int Val) {
+int lowerBoundUsingBinarySearch(vector<int> A, int Val) {
 	int nStart = 0;
 	int nEnd = A.size() - 1;
 	int nLowerBound = -1;
@@ -143,3 +143,59 @@ int lowerBoundUsingBinarySearch(std::vector<int> A, int Val) {
 	return nLowerBound;
 }
 
+std::pair<int, int> closestSum(vector<int> arr, int x) {
+	int start = 0;
+	int end = arr.size() - 1;
+	std::pair<int, int> result;
+	int currDiff = INT_MAX;
+	// int absDiff = 0;
+
+	while (start < end) {
+		int absDiff = abs((arr[start] + arr[end]) - x);
+		if (absDiff < currDiff) {
+			result.first = arr[start];
+			result.second = arr[end];
+			++start;
+			currDiff = absDiff;
+		}
+		else if (absDiff > currDiff) {
+			--end;
+		}			
+	}
+	return result;
+}
+
+void rotateKTimesExtraSpace(std::vector<int> arr, int k) {
+	int n = arr.size();
+	k = k % n;		// effective rotation
+	vector<int> output;
+
+	for (int i = n - k; i <= n - 1; ++i) {
+		output.push_back(arr[i]);
+	}
+
+	for (int i = 0; i < n - k; ++i) {
+		output.push_back(arr[i]);
+	}
+
+	cout << "Array after " << k << " rotation using extra array is: ";
+	for (int i = 0; i < n; i++) {
+		cout << output[i] << ", ";
+	}
+	cout << endl;
+}
+
+void rotateKTimesInplace(std::vector<int> arr, int k) {
+	int n = arr.size();
+	k = k % n;
+
+	reverse(arr.begin(), arr.begin() + n - k);
+	reverse(arr.begin() + n - k, arr.end());
+	reverse(arr.begin(), arr.end());
+
+	cout << "Array after " << k << " rotation using inplace array rotate is: ";
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << ", ";
+	}
+	cout << endl << endl;
+}

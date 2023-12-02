@@ -10,3 +10,6 @@ void sumOfAllSubArraysUsingPrefixSum(int array[], int size);
 void sumOfAllSubArraysUsingKadanesAlgorithm(int array[], int size);
 int lowerBoundUsingBruteForce(std::vector<int> A, int Val);
 int lowerBoundUsingBinarySearch(std::vector<int> A, int Val);
+std::pair<int, int> closestSum(std::vector<int> arr, int x);
+void rotateKTimesExtraSpace(std::vector<int> arr, int k);
+void rotateKTimesInplace(std::vector<int> arr, int k);

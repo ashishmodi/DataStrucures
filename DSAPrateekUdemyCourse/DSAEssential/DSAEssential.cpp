@@ -1,5 +1,7 @@
 #include <iostream>
+#include <algorithm>
 #include "Array.h"
+#include "Sort.h"
 
 using namespace std;
 
@@ -70,6 +72,16 @@ int main()
     cout << endl;
     rotateKTimesExtraSpace(vNos2, 3);
     rotateKTimesInplace(vNos2, 3);
+
+    vector<int> vNos3{ 10, 15, 5, 25, 20 };
+    cout << "Array before sort is: ";
+    for (auto x : vNos3) { cout << x << ", "; }
+    cout << endl;
+    // sort(vNos3.begin(), vNos3.end(), greater<int>());
+    Sort s;
+    s.bubbleSort(vNos3);
+    s.insertionSort(vNos3);
+    s.selectionSort(vNos3);
 
     return 0;
 }

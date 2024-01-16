@@ -60,5 +60,10 @@ Array before rotation is: 10, 22, 28, 29, 30, 40,
 Array after 3 rotation using extra array is: 29, 30, 40, 10, 22, 28,
 Array after 3 rotation using inplace array rotate is: 29, 30, 40, 10, 22, 28,
 
+Array before sort is: 10, 15, 5, 25, 20,
+Sort using Bubble sort: 5, 10, 15, 20, 25,
+Sort using Insertion sort: 5, 10, 15, 20, 25,
+Sort using Selection sort: 5, 10, 15, 20, 25,
+
 C:\Ashish\Personal\DataStructures\DSAPrateekUdemyCourse\x64\Debug\DSAEssential.exe (process 32904) exited with code 0.
 Press any key to close this window . . .

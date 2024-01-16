@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="DSAEssential.cpp" />
+    <ClCompile Include="Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Output.txt" />
